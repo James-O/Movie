@@ -16,7 +16,7 @@ export default async function Home({searchParams}) {
   console.log(results);
   return (
     <div>
-      <Results results={results}/>
+      {results && <Results results={results}/>}
     </div>
   )
 }
