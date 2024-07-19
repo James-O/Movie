@@ -12,10 +12,10 @@ export default async function Home({searchParams}) {
   if(!res.ok){
     throw new Error('Failed to fetch data');
   }
-  const results = data.results;
+  const results = await data.results;
   console.log(results);
   return (
-    <Suspense>
+    <Suspense fallback={'loading'}>
       {results && <Results results={results}/>}
     </Suspense>
   )
