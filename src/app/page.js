@@ -1,5 +1,5 @@
 import Results from '@/components/results';
-import {Suspense} from 'react'
+//import {Suspense} from 'react'
 
 const API_KEY = process.env.API_KEY;
 export default async function Home() {
@@ -21,8 +21,8 @@ export default async function Home() {
   const results = await data.results;
   console.log(results);
   return (
-    <Suspense fallback={'loading'}>
+    <div>
       {results && <Results results={results}/>}
-    </Suspense>
+    </div>
   )
 }
