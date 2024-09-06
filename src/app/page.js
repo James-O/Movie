@@ -1,5 +1,6 @@
 // 'use client'
 // import React, { useEffect, useState } from 'react'
+import {Suspense} from 'react'
 
 import Results from "@/components/results";
 
@@ -26,7 +27,8 @@ export default async function Home({searchParams}) {
     // },[]);
 
   return (
-    <div>
+    <Suspense fallback={<div>Loading...</div>}>
+        <div>
         <Results results={results}/>
         {/* {movieList &&
             (movieList.map((movie)=>(
@@ -37,6 +39,7 @@ export default async function Home({searchParams}) {
                 </div>
             )))
         } */}
-    </div>
+        </div>
+    </Suspense>
   )
 }
